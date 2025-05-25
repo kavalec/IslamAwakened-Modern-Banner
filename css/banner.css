@@ -1,9 +1,8 @@
-/* IslamAwakened Modern Banner Styles */
-/* Version 1: Bold Modern Gradient - Enhanced Typography */
+/* IslamAwakened Modern Banner - Mobile Fixed */
 
 .islamawakened-banner {
     background: linear-gradient(135deg, #0d47a1 0%, #1976d2 25%, #2196f3 50%, #42a5f5 75%, #64b5f6 100%);
-    padding: 40px 20px;
+    padding: 30px 15px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -20,8 +19,7 @@
     bottom: 0;
     background: 
         radial-gradient(circle at 20% 80%, rgba(255,255,255,0.15) 0%, transparent 60%),
-        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.12) 0%, transparent 60%),
-        linear-gradient(45deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.12) 0%, transparent 60%);
     pointer-events: none;
 }
 
@@ -35,63 +33,132 @@
 .islamawakened-banner h1,
 .islamawakened-banner .site-title {
     font-family: 'Cinzel', serif;
-    font-size: clamp(2.8rem, 5vw, 4.2rem);
-    font-weight: 500;
     color: white;
-    margin: 0 0 18px 0;
+    margin: 0 0 15px 0;
     text-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    letter-spacing: 0.08em;
+    letter-spacing: 0.05em;
     line-height: 1.1;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .islamawakened-banner .tagline,
 .islamawakened-banner .site-description {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: clamp(1rem, 2.5vw, 1.35rem);
-    font-weight: 300;
     color: rgba(255,255,255,0.92);
     margin: 0;
     text-shadow: 0 0.5px 1px rgba(0,0,0,0.15);
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
-/* WordPress specific classes */
-.site-header .islamawakened-banner {
-    margin: 0;
+/* Mobile First Responsive Typography */
+/* Extra Small Mobile (320px and up) */
+.islamawakened-banner h1,
+.islamawakened-banner .site-title {
+    font-size: 1.8rem; /* Much smaller for tiny screens */
+    letter-spacing: 0.02em;
 }
 
-/* Fallback for older browsers */
-.no-cssgradients .islamawakened-banner {
-    background: #2196f3;
+.islamawakened-banner .tagline,
+.islamawakened-banner .site-description {
+    font-size: 0.85rem;
 }
 
-/* High contrast mode support */
-@media (prefers-contrast: high) {
+/* Small Mobile (375px and up) */ 
+@media (min-width: 375px) {
     .islamawakened-banner h1,
     .islamawakened-banner .site-title {
-        text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+        font-size: 2.2rem;
+        letter-spacing: 0.03em;
     }
     
     .islamawakened-banner .tagline,
     .islamawakened-banner .site-description {
-        color: white;
-        text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+        font-size: 0.95rem;
     }
 }
 
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-    .islamawakened-banner::before {
-        background: none;
+/* Large Mobile (414px and up) */
+@media (min-width: 414px) {
+    .islamawakened-banner h1,
+    .islamawakened-banner .site-title {
+        font-size: 2.5rem;
+        letter-spacing: 0.04em;
+    }
+    
+    .islamawakened-banner .tagline,
+    .islamawakened-banner .site-description {
+        font-size: 1rem;
     }
 }
 
-/* Print styles */
-@media print {
+/* Tablet Portrait (768px and up) */
+@media (min-width: 768px) {
     .islamawakened-banner {
-        background: #2196f3 !important;
-        color: white;
-        -webkit-print-color-adjust: exact;
-        color-adjust: exact;
+        padding: 35px 20px;
+    }
+    
+    .islamawakened-banner h1,
+    .islamawakened-banner .site-title {
+        font-size: 3.2rem;
+        letter-spacing: 0.06em;
+        white-space: normal; /* Allow wrapping on larger screens */
+    }
+    
+    .islamawakened-banner .tagline,
+    .islamawakened-banner .site-description {
+        font-size: 1.15rem;
+    }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+    .islamawakened-banner {
+        padding: 40px 20px;
+    }
+    
+    .islamawakened-banner h1,
+    .islamawakened-banner .site-title {
+        font-size: 3.8rem;
+        letter-spacing: 0.08em;
+        margin: 0 0 18px 0;
+    }
+    
+    .islamawakened-banner .tagline,
+    .islamawakened-banner .site-description {
+        font-size: 1.3rem;
+    }
+}
+
+/* Large Desktop (1200px and up) */
+@media (min-width: 1200px) {
+    .islamawakened-banner h1,
+    .islamawakened-banner .site-title {
+        font-size: 4.2rem;
+    }
+    
+    .islamawakened-banner .tagline,
+    .islamawakened-banner .site-description {
+        font-size: 1.35rem;
+    }
+}
+
+/* Landscape Mobile Fix */
+@media (max-height: 500px) and (orientation: landscape) {
+    .islamawakened-banner {
+        padding: 20px 15px;
+    }
+    
+    .islamawakened-banner h1,
+    .islamawakened-banner .site-title {
+        font-size: 2rem;
+        margin: 0 0 8px 0;
+    }
+    
+    .islamawakened-banner .tagline,
+    .islamawakened-banner .site-description {
+        font-size: 0.9rem;
     }
 }
